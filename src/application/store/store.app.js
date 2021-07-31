@@ -6,6 +6,7 @@ import getAllStores from './get-all-stores/get-all-stores';
 import deleteStore from './delete-store/delete-store';
 import updateStore from './update-store/update-store';
 import filterByName from './filter-by-name/filter-by-name';
+import getSingleStore from './get-store-by-id/get-store-by-id';
 // Construct the store service!
 const service = new storeService(new storeModel().constructModel() );
 
@@ -15,7 +16,8 @@ export default () => {
         getAllStores: new getAllStores(service),
         deleteStore: new deleteStore(service),
         updateStore: new updateStore(service),
-        filterByName: new filterByName(service)
+        filterByName: new filterByName(service),
+        getSingleStore: new getSingleStore(service)
     })
 };
 
