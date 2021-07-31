@@ -18,4 +18,7 @@ router.route('/delete-store/:id')
 router.route('/update-store/:id')
     .post(actions.updateStore)
     
+router.route('/filter-by-name')
+    .get(actions.filterByName)
+    
 export default router;
