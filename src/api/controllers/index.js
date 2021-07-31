@@ -7,7 +7,7 @@ var router = Router();
 
 
 // controllers
-
+router.use('/stores' , store.default);
 
 
 

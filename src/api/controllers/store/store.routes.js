@@ -6,7 +6,8 @@ import actions from './store.controller';
 var router = Router();
 
 
-
+router.route('/create-new-store')
+    .post(actions.createNewStore);
 
 
 export default router;
