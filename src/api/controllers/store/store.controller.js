@@ -28,9 +28,31 @@ async function createNewStore(req, res, next) {
     }
   }
 
+  async function getAllStores(req, res, next) {
+
+    let result = await storeUC.getAllStores.execute();
+    if (result.error) {
+      res.json(
+        response.responde(
+          true,
+          result._l,
+          null,
+          result.code,
+          result.details,
+          "Your request has been terminated.",
+          "getAllStores#store.controller.js#44",
+        )
+      )
+    } else {
+      res.json(
+        response.responde(false, false, result.data)
+      )
+    }
+  }
 
 const actions = {
     createNewStore,
+    getAllStores
 };
 
 export default actions;
