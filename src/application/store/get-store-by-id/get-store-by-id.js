@@ -28,7 +28,7 @@ class getSingleStore{
             }
         } catch (exception) {
             return response.responde(true, false, null, errorCodes.ERROR_LOADING_DATA_FROM_DATABASE, exception,
-                "Not able to load user data.", "", "", `getSingleStore#store`);
+                "Not able to load data.", "", "", `getSingleStore#store`);
         }
     };
 };
