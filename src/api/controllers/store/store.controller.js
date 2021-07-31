@@ -28,7 +28,7 @@ async function createNewStore(req, res, next) {
     }
   }
 
-  async function getAllStores(req, res, next) {
+async function getAllStores(req, res, next) {
 
     let result = await storeUC.getAllStores.execute();
     if (result.error) {
@@ -50,9 +50,38 @@ async function createNewStore(req, res, next) {
     }
   }
 
+async function deleteStore(req, res, next) {
+    let id = req.params.id;
+    let client = req.params.clientRef;
+  
+  
+  
+    let result = await storeUC.deleteStore.execute(id);
+    if (result.error) {
+      res.json(
+        response.responde(
+          true,
+          result._l,
+          null,
+          result.code,
+          result.details,
+          "Your request has been terminated.",
+          appData.client,
+          appData.WEDSID,
+          "deleteStore#store.controller.js#73",
+        )
+      )
+    } else {
+      res.json(
+        response.responde(false, false, result.data)
+      )
+    }
+  }
+
 const actions = {
     createNewStore,
-    getAllStores
+    getAllStores,
+    deleteStore
 };
 
 export default actions;

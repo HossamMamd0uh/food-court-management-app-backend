@@ -11,5 +11,8 @@ router.route('/create-new-store')
 
 router.route('/get-all-stores')
     .get(actions.getAllStores)
+  
+router.route('/delete-store/:id')
+    .post(actions.deleteStore)
     
 export default router;
