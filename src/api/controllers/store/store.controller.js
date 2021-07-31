@@ -126,12 +126,35 @@ async function filterByName(req, res, next) {
     }
   };
 
+async function getSingleStore(req, res, next) {
+    let id = req.params.id;  
+    
+    let result = await storeUC.getSingleStore.execute(id);
+    if (result.error) {
+      res.json(
+        response.responde(
+          true,
+          result._l,
+          null,
+          result.code,
+          result.details,
+          "Your request has been terminated.",
+          "getSingleStore#store.controller.js#98",
+        )
+      )
+    } else {
+      res.json(
+        response.responde(false, false, result.data)
+      )
+    }
+  }
 const actions = {
     createNewStore,
     getAllStores,
     deleteStore,
     updateStore,
-    filterByName
+    filterByName,
+    getSingleStore
 };
 
 export default actions;

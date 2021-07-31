@@ -20,5 +20,7 @@ router.route('/update-store/:id')
     
 router.route('/filter-by-name')
     .get(actions.filterByName)
-    
+
+router.route('/get-single-store/:id')
+    .get(actions.getSingleStore)
 export default router;
