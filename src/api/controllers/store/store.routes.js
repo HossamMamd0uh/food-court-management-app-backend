@@ -15,4 +15,7 @@ router.route('/get-all-stores')
 router.route('/delete-store/:id')
     .post(actions.deleteStore)
     
+router.route('/update-store/:id')
+    .post(actions.updateStore)
+    
 export default router;
