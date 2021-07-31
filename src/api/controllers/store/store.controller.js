@@ -103,11 +103,35 @@ async function updateStore(req, res, next) {
     }
   }
 
+async function filterByName(req, res, next) {
+    let key = req.query.key;
+  
+    let result = await storeUC.filterByName.excute(key)
+    if (result.error) {
+      res.json(
+        response.responde(
+          true,
+          result._l,
+          null,
+          result.code,
+          result.details,
+          "Your request has been terminated.",
+          "search#search.controller.js#121",
+        )
+      )
+    } else {
+      res.json(
+        response.responde(false, false, result.data)
+      )
+    }
+  };
+
 const actions = {
     createNewStore,
     getAllStores,
     deleteStore,
     updateStore,
+    filterByName
 };
 
 export default actions;
