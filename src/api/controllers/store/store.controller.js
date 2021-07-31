@@ -78,10 +78,36 @@ async function deleteStore(req, res, next) {
     }
   }
 
+async function updateStore(req, res, next) {
+    let store = req.body.store;
+    let id = req.params.id;
+  
+  
+    let result = await storeUC.updateStore.execute(id, store);
+    if (result.error) {
+      res.json(
+        response.responde(
+          true,
+          result._l,
+          null,
+          result.code,
+          result.details,
+          "Your request has been terminated.",
+          "updateStore#store.controller.js#98",
+        )
+      )
+    } else {
+      res.json(
+        response.responde(false, false, result.data)
+      )
+    }
+  }
+
 const actions = {
     createNewStore,
     getAllStores,
-    deleteStore
+    deleteStore,
+    updateStore,
 };
 
 export default actions;
