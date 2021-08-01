@@ -208,6 +208,30 @@ class service {
     }
   }
 
+    /**
+   * Delete all data
+   */
+     async deleteAll() {
+      try {
+        let item = await this.model.deleteMany({});
+  
+        if (item) return response.responde(false, false, item);
+        else return response.responde(false, false, item);
+      } catch (error) {
+        return response.responde(
+          true,
+          false,
+          null,
+          errorCodes.ENABLE_TO_DELETE_FROM_DATABASE,
+          exception,
+          "Not able to delete data.",
+          "",
+          "",
+          `deleteAll#service`
+        );
+      }
+    }
+    
   /**
    * Update existing data by Query
    */

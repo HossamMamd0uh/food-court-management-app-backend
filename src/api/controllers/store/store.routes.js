@@ -23,4 +23,7 @@ router.route('/filter-by-name')
 
 router.route('/get-single-store/:id')
     .get(actions.getSingleStore)
+
+router.route('/delete-all-stores')
+    .post(actions.deleteAllStores)
 export default router;
