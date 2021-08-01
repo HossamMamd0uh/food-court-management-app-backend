@@ -27,7 +27,7 @@ class deleteAllStores {
             }
         } catch (exception) {
             return response.responde(true, false, null, errorCodes.ERROR_LOADING_DATA_FROM_DATABASE, exception,
-                "Not able to delete data.", "", "", `getAllStores#store`);
+                "Not able to delete data.", "", "", `deleteAllStores#store`);
         }
     }
 }
