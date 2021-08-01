@@ -148,13 +148,36 @@ async function getSingleStore(req, res, next) {
       )
     }
   }
+
+async function deleteAllStores(req, res, next) {
+
+    let result = await storeUC.deleteAllStores.execute();
+    if (result.error) {
+      res.json(
+        response.responde(
+          true,
+          result._l,
+          null,
+          result.code,
+          result.details,
+          "Your request has been terminated.",
+          "deleteAllStores#store.controller.js#164",
+        )
+      )
+    } else {
+      res.json(
+        response.responde(false, false, result.data)
+      )
+    }
+  }
 const actions = {
     createNewStore,
     getAllStores,
     deleteStore,
     updateStore,
     filterByName,
-    getSingleStore
+    getSingleStore,
+    deleteAllStores
 };
 
 export default actions;
