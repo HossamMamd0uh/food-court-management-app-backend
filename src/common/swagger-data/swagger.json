@@ -1,0 +1,240 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "version": "1.0.0",
+      "title": "Food Court APIs",
+      "description": "My Food Court Project Application API",
+      "license": {
+        "name": "MIT",
+        "url": "https://opensource.org/licenses/MIT"
+      }
+    },
+    "host": "localhost:3255",
+    "basePath": "/api/v1/stores",
+    "tags": [
+      {
+        "name": "Stores",
+        "description": "API for stores in the system"
+      }
+    ],
+    "schemes": [
+      "http"
+    ],
+    "consumes": [
+      "application/json"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "paths": {
+      "/create-new-store": {
+        "post": {
+          "tags": [
+            "Stores"
+          ],
+          "summary": "Create new store in system",
+          "parameters": [
+            {
+              "name": "store",
+              "in": "body",
+              "description": "Store that we want to create",
+              "schema": {
+                "$ref": "#/definitions/store"
+              }
+            }
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+            "200": {
+              "description": "New store is created",
+              "schema": {
+                "$ref": "#/definitions/store"
+              }
+            }
+          }
+        } 
+      },
+      "/get-all-stores": {
+        "get": {
+            "tags": [
+              "Stores"
+            ],
+            "summary": "Get all stores in system",
+            "responses": {
+              "200": {
+                "description": "OK",
+                "schema": {
+                  "$ref": "#/definitions/store"
+                }
+              }
+            }
+          }
+      },
+      "/delete-store/{id}": {
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "ID of store that we want to find",
+            "type": "integer"
+          }
+        ],
+        "post": {
+          "summary": "Delete store with given ID",
+          "tags": [
+            "Stores"
+          ],
+          "responses": {
+            "200": {
+              "description": "Store is deleted",
+              "schema": {
+                "$ref": "#/definitions/store"
+              }
+            }
+          }
+        }
+      },
+      "/update-store/{id}": {
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "description": "ID of store that we want to find",
+            "type": "integer"
+          }
+        ],
+        "post": {
+          "summary": "Update store with give ID",
+          "tags": [
+            "Stores"
+          ],
+          "parameters": [
+            {
+              "name": "store",
+              "in": "body",
+              "description": "Store with new values of properties",
+              "schema": {
+                "$ref": "#/definitions/updateStore"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Store is updated",
+              "schema": {
+                "$ref": "#/definitions/store"
+              }
+            }
+          }
+        }
+      },
+      "/delete-all-stores": {
+        "post": {
+            "tags": [
+              "Stores"
+            ],
+            "summary": "Delete all stores in system",
+            "responses": {
+              "200": {
+                "description": "OK"
+
+              }
+            }
+          }
+      },
+      "/get-single-store/{id}": {
+        "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "description": "ID of store that we want to find",
+              "type": "integer"
+            }
+          ],
+        "get": {
+            "tags": [
+              "Stores"
+            ],
+            "summary": "Get store with given ID",
+            "responses": {
+              "200": {
+                "description": "OK",
+                "schema": {
+                  "$ref": "#/definitions/store"
+                }
+              }
+            }
+          }
+      },
+      "/filter-by-name?key": {
+        "parameters": [
+            {
+              "name": "key",
+              "in": "path",
+              "required": true,
+              "description": "name of store that we want to find",
+              "type": "string"
+            }
+          ],
+        "get": {
+            "tags": [
+              "Stores"
+            ],
+            "summary": "Get stores which name includes the passed key",
+            "responses": {
+              "200": {
+                "description": "OK",
+                "schema": {
+                  "$ref": "#/definitions/store"
+                }
+              }
+            }
+          }
+      }
+    },
+    "definitions": {
+      "store": {
+        "required": [
+          "storeName",
+          "storeDescription",
+          "storeLogo"
+        ],
+        "properties": {
+
+          "storeName": {
+            "type": "string"
+          },
+          "storeDescription":{
+              "type": "string"
+          },
+          "storeLogo": {
+              "type": "string"
+          }
+
+          
+         
+        }
+      },
+      "updateStore": {
+
+        "properties": {
+          "storeName": {
+            "type": "string"
+          },
+          "storeDescription":{
+            "type": "string"
+            },
+          "storeLogo": {
+            "type": "string"
+        }
+         
+        }
+      }
+     
+    }
+  }
