@@ -22,7 +22,7 @@ This project is written using NodeJS & ExpressJS for the Back-end & MongoDB for 
 3. You'll find a full list of application APIs and Mongo store model
 
 Here's a sample of create store request:  
-![creaet](create.png)
+![creaet](./swagger_screenshot/create.png)
 
 And here's a GIF of the same request:  
 ![create](https://media.giphy.com/media/1907sI6WhjHGfpDXHy/giphy.gif)
