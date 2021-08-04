@@ -13,7 +13,7 @@ This project is written using NodeJS & ExpressJS for the Back-end & MongoDB for 
 1. Navigate to project directory and run `npm install`
 2. To start the server run `npm start`
 3. The server by default is listening on port **3255**
-4. Now the server is running and if you installed MongoDB it should by connected automatically
+4. Now the server is running and if you installed MongoDB it should be connected automatically
 
 ## Full API documentation
 **APIs documentation is implemented using SwaggerUI**
