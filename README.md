@@ -31,3 +31,23 @@ Data is sent as JSON inside body under an object called **store**, and here's a 
 | storeName | storeDescription                                                                                                                                                                             | storeLogo                        |
 | --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------- |
 | Cadillac Ranch  | Cadillac Ranch is the premier all-American bar and grill. The nearly 11,000-square-foot space offers guests an authentic, all-American family dining experience in a fun and dynamic environment.. | http://enozom.com/test/images/img5.jpg |
+
+## Project dependencies & libraries
+- "@babel/core": "^7.7.4"
+- "@babel/node": "^7.7.4"
+- "@babel/preset-env": "^7.7.4"
+- "nodemon": "^2.0.1"
+- "body-parser": "^1.19.0"
+- "cors": "^2.8.5"
+- "dotenv": "^8.2.0"
+- "express": "^4.17.1"
+- "global-tunnel-ng": "^2.7.1"
+- "method-override": "^3.0.0"
+- "mongodb": "^3.3.4"
+- "mongoose": "^5.7.13"
+- "mongoose-autopopulate": "^0.10.0"
+- "mongoose-unique-validator": "^2.0.3"
+- "request": "^2.88.0"
+- "swagger-jsdoc": "^6.1.0"
+- "swagger-ui-express": "^4.1.6"
+- "winston": "^3.2.1"
